@@ -56,15 +56,16 @@ reduce the look up time from O(n) to O(1) by trading space for speed.
 # print(twosum(a,target))
 '''We can also do above process in one pass while we iterate and inserting elements into the table, we also look back to check if
 current elements's complement already exists in the table. If it exists, we have found a solution and return immediately.'''
-def twosum(a, target):
-    dic = {}
-    for i in range(len(a)):
-        if a[i] in dic:
-            # print(dic)
-            return [dic[a[i]], i]
-        else:
-            dic[target-a[i]] = a[i]
+# def twosum(a, target):
+#     dic = {}
+#     for i in range(len(a)):
+#         if a[i] in dic:
+#             # print(dic)
+#             return [dic[a[i]], i]
+#         else:
+#             dic[target-a[i]] = a[i]
     
-a = [3,5,2,1,17,12,14,19,20]
-target = 15
-print(twosum(a,target))
+# a = [3,5,2,1,17,12,14,19,20]
+# target = 15
+# print(twosum(a,target))
+
