@@ -104,41 +104,41 @@ occurrence of the number and the last occurence of the
 respective number and then return last - first + 1.
 and we will get total value of the number that is occuring 
 multiple times.'''
-def count_occurrences(a,target):
-    def first_occurrence(a,target):
-        left, right = 0, len(a)-1
-        first = -1
-        while left <= right:
-            mid = (left+right)//2
-            if a[mid] == target:
-                first = mid
-                right = mid - 1 # for first look at left
-            elif a[mid] < target:
-                left = mid + 1
-            else:
-                right = mid-1
-        return first
-    def last_occurrence(a,target):
-        left, right = 0,len(a)-1
-        last = -1
-        while left <= right:
-            mid = (left + right)//2
-            if a[mid] == target:
-                last = mid
-                left = mid + 1 # for last look at right.
-            elif a[mid] < target:
-                left = mid+1
-            else:
-                right = mid -1
-        return last
-    first = first_occurrence(a,target)
-    # Target not found
-    if first == -1:
-        return 0
-    last = last_occurrence(a,target)
-    # calculate total occurrences
-    return last - first + 1
-a = [ 2,3,5,5,5,6,8,8,10,11,11,11]
-target = 11
-print(count_occurrences(a,target))
+# def count_occurrences(a,target):
+#     def first_occurrence(a,target):
+#         left, right = 0, len(a)-1
+#         first = -1
+#         while left <= right:
+#             mid = (left+right)//2
+#             if a[mid] == target:
+#                 first = mid
+#                 right = mid - 1 # for first look at left
+#             elif a[mid] < target:
+#                 left = mid + 1
+#             else:
+#                 right = mid-1
+#         return first
+#     def last_occurrence(a,target):
+#         left, right = 0,len(a)-1
+#         last = -1
+#         while left <= right:
+#             mid = (left + right)//2
+#             if a[mid] == target:
+#                 last = mid
+#                 left = mid + 1 # for last look at right.
+#             elif a[mid] < target:
+#                 left = mid+1
+#             else:
+#                 right = mid -1
+#         return last
+#     first = first_occurrence(a,target)
+#     # Target not found
+#     if first == -1:
+#         return 0
+#     last = last_occurrence(a,target)
+#     # calculate total occurrences
+#     return last - first + 1
+# a = [ 2,3,5,5,5,6,8,8,10,11,11,11]
+# target = 11
+# print(count_occurrences(a,target))
             
