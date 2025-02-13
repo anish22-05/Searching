@@ -97,60 +97,60 @@ but a second pass is needed to verify.
 5. If an element's frequency is greater thatn n/2, it is the majority element.
 
     '''
-class TreeNode:
-    def __init__(self,value):
-        self.value = value
-        self.count = 1
-        self.left = None
-        self.right = None
-class BST:
-    def __init__(self,value):
-        self.root = None
-    # Insert elements in BST and update frequency count
-    def insert(self,value):
-        if self.root is None:
-            self.root = TreeNode(value)
-        else:
-            self._insert_recursive(self.root,value)
-    def _insert_recursive(self,node,value):
-        if value == node.value:
-            node.count += 1 #increment count if value already exists
-        elif value< node.value:
-            if node.left is None:
-                node.left = TreeNode(value)
-            else:
-                self._insert_recursive(node.left,value)
-        else:
-            if node.right is None:
-                node.right = TreeNode(value)
-            else:
-                self._insert_recursive(node.right,value)
-        # Find the majority element by traversing the BST.
-    def find_majority(self,n):
-            self.majority_element = None
-            self.max_count = 0
-            self._inorder_traversal(self.root,n)
-            if self.max_count > n//2:
-                return self.majority_element
-            else:
-                return "No majority element found."
-    def _inorder_traversal(self,node,n):
-        if node:
-            self._inorder_traversal(node.left,n)
-            if node.count > self.max_count:
-                self.max_count = node.count
-                self.majority_element = node.value
-            self._inorder_traversal(node.right,n)
-def majority_element_bst(a):
-    n = len(a)
-    bst = BST()
-    # Insert elements into BST
-    for num in a:
-        bst.insert(num)
-    return bst.find_majority(n)
-# Test Case
-a = [3,6,6,3,6,3,6,6]
-print(majority_element_bst(a))
+# class TreeNode:
+#     def __init__(self,value):
+#         self.value = value
+#         self.count = 1
+#         self.left = None
+#         self.right = None
+# class BST:
+#     def __init__(self,value):
+#         self.root = None
+#     # Insert elements in BST and update frequency count
+#     def insert(self,value):
+#         if self.root is None:
+#             self.root = TreeNode(value)
+#         else:
+#             self._insert_recursive(self.root,value)
+#     def _insert_recursive(self,node,value):
+#         if value == node.value:
+#             node.count += 1 #increment count if value already exists
+#         elif value< node.value:
+#             if node.left is None:
+#                 node.left = TreeNode(value)
+#             else:
+#                 self._insert_recursive(node.left,value)
+#         else:
+#             if node.right is None:
+#                 node.right = TreeNode(value)
+#             else:
+#                 self._insert_recursive(node.right,value)
+#         # Find the majority element by traversing the BST.
+#     def find_majority(self,n):
+#             self.majority_element = None
+#             self.max_count = 0
+#             self._inorder_traversal(self.root,n)
+#             if self.max_count > n//2:
+#                 return self.majority_element
+#             else:
+#                 return "No majority element found."
+#     def _inorder_traversal(self,node,n):
+#         if node:
+#             self._inorder_traversal(node.left,n)
+#             if node.count > self.max_count:
+#                 self.max_count = node.count
+#                 self.majority_element = node.value
+#             self._inorder_traversal(node.right,n)
+# def majority_element_bst(a):
+#     n = len(a)
+#     bst = BST()
+#     # Insert elements into BST
+#     for num in a:
+#         bst.insert(num)
+#     return bst.find_majority(n)
+# # Test Case
+# a = [3,6,6,3,6,3,6,6]
+# print(majority_element_bst(a))
 
 
     

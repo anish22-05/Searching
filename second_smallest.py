@@ -141,22 +141,27 @@ are (3n/2-1).
 # findmin_max(a)
 """Finding second largest element in the given input list of elements
 Find largest element in the given input list of elements.
+Total comparisons are (n-1 + n-2)= 2n-3.
 """
-def second_largest(a):
-    max = 0
-    max_index = None
-    print(len(a))
-    for i in range(len(a)):
-        if a[i] > max:
-            max = a[i]
-            max_index = i
-    max = max - a[max_index]
-    del(a[max_index])
+# def second_largest(a):
+#     max = 0
+#     max_index = None
+#     print(len(a))
+#     for i in range(len(a)):
+#         if a[i] > max:
+#             max = a[i]
+#             max_index = i
+#     # as we are deleting the max value from the array to 
+#     # find second largest value.
+#     max = max - a[max_index]
+#     del(a[max_index])
     
-    # print("after deleting max value",len(a))
-    for i in range(len(a)):
-        if a[i] > max:
-            max = a[i]
-    print("This is the second largest element",max)
-a = [12,13,143,76,44,58,3,7,34,78,23,12]
-second_largest(a)
+#     # print("after deleting max value",len(a))
+#     # Now the length of array is 1 less than actual array
+#     for i in range(len(a)):
+#         if a[i] > max:
+#             max = a[i]
+#     print("This is the second largest element",max)
+# a = [12,13,143,76,44,58,3,7,34,78,23,12]
+# second_largest(a)
+
