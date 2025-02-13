@@ -76,4 +76,5 @@ values so that all 0's come forward and all the 1's at back.
 # a = [0,1,0,1,1,0,0,0,1,0,1,1,1,0]
 # seperate(a)
 # print(a)
+""""""
 
